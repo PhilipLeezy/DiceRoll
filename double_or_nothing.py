@@ -17,9 +17,11 @@ while play == "yes":
     print("You roll: " + str(p1))
     if (p1 > p2):
         print("You win!")
-        pot = (pot * 2)
-        print("The pot is doubled: $" + str(pot) + ".00")
         play = input("Continue? ")
-        if (play == "no"):
+        if (play == "yes"):
+            pot = (pot * 2)
+            print("The pot is doubled: $" + str(pot) + ".00")
+        else:
             print("Your winnings: $" + str(pot) + ".00")
-            
+    else:
+        print("You lose...")
