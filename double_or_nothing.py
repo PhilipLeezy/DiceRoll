@@ -28,3 +28,6 @@ while play == "yes":
                 play = input("I'm sorry, I don't understand. Please respond with yes or no: ")
     else:
         print("You lose...")
+        play = input("Play a new round? ")
+        while play not in [yes,no]:
+            play = input("I'm sorry, I don't understand. Please respond with yes or no: ")
