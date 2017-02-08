@@ -5,7 +5,7 @@ name = input("What's your name? ")
 print("Nice to meet you " + name + "!")
 
 play = "yes"
-pot=5
+pot = 5
 
 while play == "yes":
     i=1
