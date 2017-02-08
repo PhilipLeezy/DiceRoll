@@ -21,7 +21,7 @@ while play == "yes":
         if (play == "yes"):
             pot = (pot * 2)
             print("The pot is doubled: $" + str(pot) + ".00")
-        if (play == "no"):
+        elif (play == "no"):
             print("Your winnings: $" + str(pot) + ".00")
         else:
             while play not in [yes,no]:
