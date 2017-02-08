@@ -6,9 +6,9 @@ print("Nice to meet you " + str(name) + "!")
 
 play = "yes"
 pot = 5
+i=1
 
 while play == "yes":
-    i=1
     p1=randint(1,6)
     p2=randint(1,6)
     print("Round " + str(i))
@@ -20,6 +20,7 @@ while play == "yes":
         play = input("Continue? ")
         if (play == "yes"):
             pot = (pot * 2)
+            i+=1
             print("The pot is doubled: $" + str(pot) + ".00")
         elif (play == "no"):
             print("Your winnings: $" + str(pot) + ".00")
@@ -29,5 +30,11 @@ while play == "yes":
     else:
         print("You lose...")
         play = input("Play a new round? ")
-        while play not in ["yes","no"]:
-            play = input("I'm sorry, I don't understand. Please respond with \"yes\" or \"no\": ")
+        if (play == "yes"):
+            i=1
+            pot=5
+        elif (play == "no"):
+            break
+        else:
+            while play not in ["yes","no"]:
+                play = input("I'm sorry, I don't understand. Please respond with \"yes\" or \"no\": ")
