@@ -2,7 +2,7 @@ from random import randint
 import sys
 
 name = input("What's your name? ")
-print("Nice to meet you " + str(name) + "! It'll be $5 per game.")
+print("Nice to meet you " + str(name) + "! It'll be $10 per game.")
 
 play = "yes"
 pot = 5
@@ -19,7 +19,7 @@ while play == "yes":
     print("You roll: " + str(p1))
     if (p1 > p2):
         print("You win!")
-        bank = ((bank - 5) + pot)
+        bank = ((bank - 10) + pot)
         print("New Bank Amount: $" + str(bank) + ".00")
         play = input("Continue? ")
         if (play == "yes"):
@@ -33,14 +33,19 @@ while play == "yes":
                 play = input("I'm sorry, I don't understand. Please respond with yes or no: ")
     else:
         print("You lose...")
-        bank = (bank - 5)
+        bank = (bank - 10)
         print("New Bank Amount: $" + str(bank) + ".00")
-        play = input("Play a new round? ")
-        if (play == "yes"):
-            i=1
-            pot=5
-        elif (play == "no"):
+        if (bank < 9):
+            print("Oh dear, you're out of money. Thank you, come again!")
             break
         else:
-            while play not in ["yes","no"]:
-                play = input("I'm sorry, I don't understand. Please respond with \"yes\" or \"no\": ")
+            play = input("Play a new round? ")
+            if (play == "yes"):
+                i=1
+                pot=5
+            elif (play == "no"):
+                break
+            else:
+                while play not in ["yes","no"]:
+                    play = input("I'm sorry, I don't understand. Please respond with \"yes\" or \"no\": ")
+              
