@@ -1,8 +1,11 @@
 import csv
 import glob
 
-for file in glob.glob('*.csv'):
-        with open(file, 'rt') as input:
-                with open(file + '_output.csv', 'wt') as output:
+filenames = glob.glob('*.txt')
+
+for file in filenames:
+        file = file.replace('.txt', '')
+        with open(file + '.txt', 'rt') as input:
+                with open(file + '_output.txt', 'wt') as output:
                         for line in input:
                                 output.write(line.replace(',', ''))
