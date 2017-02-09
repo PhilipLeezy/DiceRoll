@@ -35,7 +35,7 @@ while play == "yes":
         print("You lose...")
         bank = (bank - 10)
         print("New Bank Amount: $" + str(bank) + ".00")
-        if (bank < 9):
+        if (bank < 10):
             print("Oh dear, you're out of money. Thank you, come again!")
             break
         else:
